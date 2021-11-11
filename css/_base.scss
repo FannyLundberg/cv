@@ -1,0 +1,229 @@
+// --------------------------------------------------------------
+// ----------Beskrivning av sidan--------------------------------
+// ----------Denna sida stylar för mobil (och grundstyle)--------
+// --------------------------------------------------------------
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: $greytext;
+    font-family: 'Noto Serif', serif;
+    background-color: $darkgrey;
+    margin: 0;
+}
+
+// --------------------------------------------------------------
+// ---------Övre delen av sidan---------------------------------- 
+// ---------(Profilbild, namn, text och kontakt-ikoner)----------
+// --------------------------------------------------------------
+
+/*ikoner som scrollar med*/
+.header-contact-info {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 130px;
+    right: 15px;
+    line-height: 170%;
+    svg {
+        color: $white;
+        transition: 0.15s ease-in-out;
+        &:hover {
+            background-color: $darkpink;
+            border: 1px solid $black;
+            border-radius: 20%;   
+        }
+    }  
+}
+
+/* vänstra övre hörnet */
+.upper-left-corner {
+    width: 50%;
+    height: 250px;
+    display: flex;
+    float: left;
+    padding: 1%;
+    background: linear-gradient(to top left, $darkgrey 50%, $white 50%, $darkpink 50%, $darkpink 100%);
+}
+
+img {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    align-self: center;
+    box-shadow: 2px 2px 1px $lightgrey;
+    &:hover {
+        transform: rotateY(180deg);
+    }
+}
+
+/* högra övre hörnet */
+.upper-right-corner {
+    width: 50%;
+    height: 250px;
+    display: flex;
+    float: left;
+    background-color: $darkgrey;
+    color: #fff;
+    align-items: center;
+    padding-left: 1%;
+    a {
+        text-decoration: none;
+        color: $white;
+        border: 1px solid $white;
+        position: absolute;
+        top: 5px;
+        right: 7px;
+        padding: 0.2%;
+        min-width: 35px;
+        &:hover {
+            background-color: $darkpink;
+            color: $greytext;
+        }
+    }
+}
+
+h1 {
+    font-size: 1.4rem;
+    span {
+        font-size: 1.1rem;
+    }
+}
+
+/* Animation på "blivande/soon to be" */
+.first-word-span-h1 {
+    animation: headingSpanAnimation 7s ease 0s 1 normal forwards;
+}
+
+@keyframes headingSpanAnimation {
+    0% {
+      opacity: 0.1;
+    }
+    100% {
+      opacity: 0.7;
+    }
+}
+
+// ---------------------------------------------------------------
+// ------------Huvudinnehåll-------------------------------------- 
+// ------------(Egenskaper, färdigheter och kontakt)--------------
+// ---------------------------------------------------------------
+.section-about {
+    background-color: $darkpink;
+    float: left;
+    width: 100%;
+    padding-left: $paddingLeft;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    word-wrap: break-word;
+    h2 {
+        font-size: 1.2rem;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
+
+ul {
+    list-style-type: none;
+    padding-top: 0;
+    padding-left: 3%;
+    margin-top: 1%;
+    li a {
+        text-decoration-line: none;
+        color: $greytext;
+        transition: 0.15s ease-in;
+        &:hover {
+            font-size: 1.05rem;
+            line-height: 120%;
+        }
+    }
+}
+
+.left-icons {
+    transition: all 0.25s ease-in-out 0s;
+    &:hover {
+        transform: rotate(-7deg); 
+    }
+}
+
+// --------------------------------------------------------------
+// ---------Huvudinnehåll----------------------------------------
+// ---------(Utbildning och arbetslivserfarenhet)----------------
+// --------------------------------------------------------------
+.section-education, 
+.section-work-experience {
+    width: 100%;
+    float: left;
+    background-color: $lightpink;
+    padding-left: $paddingLeft;
+    padding-right: $paddingRight;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    h2 {
+        font-size: 1.2rem;
+        padding-top: 1%;    
+        span {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    span {
+        font-size: 0.9rem;
+    }
+}
+
+ol {
+    list-style-type: none;
+}
+
+// --------------------------------------------------------------
+// ----------Nedre delen av sidan--------------------------------
+// ----------(Övriga meriter och copyright)----------------------
+// --------------------------------------------------------------
+
+/* Övriga meriter */
+footer {
+    width: 50%;
+    float: left;
+    background-color: $darkgrey;
+    color: $white;
+    height: 380px;
+    padding-left: 3%;
+    padding-right: 0;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    line-height: 120%;
+    ul {
+        margin-left: 3%;
+        list-style-type: circle;
+        li {
+            padding-bottom: 2%;
+            word-wrap: break-word;
+        }
+    }
+}
+
+/* Copyright */
+aside {
+    width: 50%;
+    float: left;
+    height: 380px;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    background: linear-gradient(to bottom right, $darkgrey 0%, $darkgrey 50%, $darkpink 50%, $darkpink 100%);
+    p {
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+}
